@@ -44,6 +44,8 @@
             type="text"
             id="month"
             placeholder="MM"
+            min="01"
+            max="12"
             maxlength="2"
             onkeyup="monthCheck()"
           />
@@ -58,7 +60,7 @@
             id="year"
             placeholder="YYYY"
             maxlength="4"
-            onkeyup="dateFormatCheck()"
+            onkeyup="yearCheck()"
           />
           <span id="year-error" class="error-text hidden"
             >Must be a valid year</span
@@ -66,22 +68,31 @@
         </form>
       </div>
       <div id="decoration">
-        <button onclick="calculatedValue()">
-          <img src=".\assets\images\icon-arrow.svg" alt="image here" />
-        </button>
-        <i class="fa-thin fa-horizontal-rule"></i>
+        <del>
+          <button onclick="calculatedValue()">
+            <img
+              id="button-image"
+              src=".\assets\images\icon-arrow.svg"
+              alt="image here"
+            />
+          </button>
+        </del>
+        <!-- <img
+          src="./assets/images/Horizontal-Line-PNG-Images.png"
+          alt="Horizontal-Line"
+        /> -->
       </div>
       <div id="result">
         <div>
-          <h2 class="returned-values">--</h2>
+          <h2 class="returned-values years">--</h2>
           <h2>years</h2>
         </div>
         <div>
-          <h2 class="returned-values">--</h2>
+          <h2 class="returned-values months">--</h2>
           <h2>months</h2>
         </div>
         <div>
-          <h2 class="returned-values">--</h2>
+          <h2 class="returned-values days">--</h2>
           <h2>days</h2>
         </div>
       </div>
