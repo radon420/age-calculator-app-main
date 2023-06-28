@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icons"
+      href="https://fontawesome.com/icons/horizontal-rule?f=classic&s=thin"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>Age calculator app</title>
+  </head>
+  <body>
+    <div id="background">
+      <div id="date-input">
+        <form id="day-form">
+          <label id="for-day" for="day">DAY</label>
+          <input
+            type="text"
+            id="day"
+            placeholder="DD"
+            maxlength="2"
+            onkeyup="dayCheck()"
+          />
+          <span id="day-error" class="error-text hidden"
+            >Must be a valid day</span
+          >
+        </form>
+        <form id="month-form">
+          <label id="for-month" for="month">MONTH</label>
+          <input
+            type="text"
+            id="month"
+            placeholder="MM"
+            maxlength="2"
+            onkeyup="monthCheck()"
+          />
+          <span id="month-error" class="error-text hidden"
+            >Must be a valid month</span
+          >
+        </form>
+        <form id="year-form">
+          <label id="for-year" for="year">YEAR</label>
+          <input
+            type="text"
+            id="year"
+            placeholder="YYYY"
+            maxlength="4"
+            onkeyup="dateFormatCheck()"
+          />
+          <span id="year-error" class="error-text hidden"
+            >Must be a valid year</span
+          >
+        </form>
+      </div>
+      <div id="decoration">
+        <button onclick="calculatedValue()">
+          <img src=".\assets\images\icon-arrow.svg" alt="image here" />
+        </button>
+        <i class="fa-thin fa-horizontal-rule"></i>
+      </div>
+      <div id="result">
+        <div>
+          <h2 class="returned-values">--</h2>
+          <h2>years</h2>
+        </div>
+        <div>
+          <h2 class="returned-values">--</h2>
+          <h2>months</h2>
+        </div>
+        <div>
+          <h2 class="returned-values">--</h2>
+          <h2>days</h2>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
