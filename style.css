@@ -15,7 +15,11 @@ html {
 }
 body {
   background-color: hsl(0, 0%, 86%);
+  width: 100vw;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
 }
 
 input {
@@ -30,9 +34,6 @@ input {
 input[placeholder] {
   color: hsl(0, 1%, 44%);
 }
-/* input:invalid {
-  border: 1px solid hsl(0, 100%, 67%);
-} */
 input:focus {
   border: 1px solid hsl(259, 100%, 65%);
 }
@@ -65,12 +66,15 @@ button:hover {
   cursor: pointer;
 }
 #background {
+  width: 100%;
+  height: 80%;
   display: flex;
   flex-direction: column;
   background-color: white;
+  justify-content: center;
   border-radius: 20px 20px 100px 20px;
-  margin: 50px 20px;
-  height: 80%;
+  margin: 15% 0;
+  box-shadow: 1px 1px 20px 5px rgba(100, 100, 100, 0.2);
 }
 
 /*
@@ -82,14 +86,14 @@ Input Section Properties
 #date-input {
   display: flex;
   justify-content: space-evenly;
-  margin: 40px 0 5px;
+  margin: 25px 0 5px;
 }
 #day-form,
 #month-form,
 #year-form {
   display: flex;
   flex-direction: column;
-  width: 20vw;
+  width: 25%;
 }
 
 /*
@@ -101,11 +105,11 @@ Section Divider Properties
 #decoration {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 50px;
+  grid-template-rows: 50px 50px;
   align-content: center;
   justify-items: center;
   align-items: center;
-  margin: 20px 0;
+  margin: 2px 0;
 }
 #decoration button {
   z-index: 2;
@@ -120,21 +124,18 @@ Section Divider Properties
 #button-image:hover {
   background-color: black;
 }
-#decoration img {
-  color: grey;
+.fa-light {
+  background-color: grey;
   z-index: 1;
   width: 85%;
-  height: 50px;
-}
-#decoration img,
-#button-image {
-  grid-area: 1 / 1 / 2 / 2;
-}
-del {
-  width: 85%;
-  height: 2px;
+  height: 1px;
   align-self: center;
   justify-self: center;
+  opacity: 0.2;
+}
+.fa-light,
+button {
+  grid-area: 1 / 1 / 3 / 2;
 }
 
 /*
@@ -149,13 +150,13 @@ Returned Value Properties
 }
 #result div {
   padding-left: 40px;
-  padding-top: 10px;
+  padding-top: 5px;
   display: inline-flex;
 }
 #result h2 {
   font-style: italic;
   font-weight: 800;
-  font-size: 2.5rem;
+  font-size: 3rem;
   padding-left: 5px;
 }
 .returned-values {
@@ -163,17 +164,31 @@ Returned Value Properties
 }
 
 @media (min-width: 576px) {
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #background {
+    max-width: 550px;
+  }
   #decoration {
-    width: 100%;
+    width: 95%;
     display: grid;
-    grid-template-columns: 75% 25%;
+    grid-template-columns: 90% 50px;
     grid-template-rows: 1fr;
     margin: 10px 0;
   }
-  #decoration img {
-    grid-area: 1 / 1 / 2 / 2;
+  .fa-light {
+    width: 90%;
+    grid-area: 1 / 1 / 2 / 3;
+    justify-self: right;
   }
   #decoration button {
     grid-area: 1 / 2 / 2 / 3;
+  }
+  #result h2 {
+    font-size: 5rem;
   }
 }

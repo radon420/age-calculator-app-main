@@ -247,5 +247,14 @@ function calculatedValue() {
       monthDisplay.textContent = currentMonth - enteredMonth + 12;
       dayDisplay.textContent = currentDay - enteredDay;
     }
+    if (currentYear - enteredYear == 1) {
+      document.querySelector("#year-label").textContent = "year";
+    }
+    if (currentMonth - enteredMonth == 1) {
+      document.querySelector("#month-label").textContent = "month";
+    }
+    if (currentDay - enteredDay == 1) {
+      document.querySelector("#day-label").textContent = "day";
+    }
   }
 }

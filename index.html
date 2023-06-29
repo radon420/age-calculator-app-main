@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
+    <link
       rel="icons"
       href="https://fontawesome.com/icons/horizontal-rule?f=classic&s=thin"
     />
@@ -68,15 +74,14 @@
         </form>
       </div>
       <div id="decoration">
-        <del>
-          <button onclick="calculatedValue()">
-            <img
-              id="button-image"
-              src=".\assets\images\icon-arrow.svg"
-              alt="image here"
-            />
-          </button>
-        </del>
+        <button onclick="calculatedValue()">
+          <img
+            id="button-image"
+            src=".\assets\images\icon-arrow.svg"
+            alt="image here"
+          />
+        </button>
+        <i class="fa-light fa-horizontal-rule"></i>
         <!-- <img
           src="./assets/images/Horizontal-Line-PNG-Images.png"
           alt="Horizontal-Line"
@@ -85,15 +90,15 @@
       <div id="result">
         <div>
           <h2 class="returned-values years">--</h2>
-          <h2>years</h2>
+          <h2 id="year-label">years</h2>
         </div>
         <div>
           <h2 class="returned-values months">--</h2>
-          <h2>months</h2>
+          <h2 id="month-label">months</h2>
         </div>
         <div>
           <h2 class="returned-values days">--</h2>
-          <h2>days</h2>
+          <h2 id="day-label">days</h2>
         </div>
       </div>
     </div>
