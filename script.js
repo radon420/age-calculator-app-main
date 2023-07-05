@@ -238,15 +238,24 @@ function calculatedValue() {
   let enteredYear = document.querySelector("#year").value;
 
   if (dateFormatCheck()) {
-    if (currentMonth > enteredMonth) {
+    if (currentMonth > enteredMonth && currentDay > enteredDay) {
       yearDisplay.textContent = currentYear - enteredYear;
       monthDisplay.textContent = currentMonth - enteredMonth;
       dayDisplay.textContent = currentDay - enteredDay;
+    } else if (currentMonth > enteredMonth && currentDay < enteredDay) {
+      yearDisplay.textContent = currentYear - enteredYear;
+      monthDisplay.textContent = currentMonth - enteredMonth - 1;
+      dayDisplay.textContent = currentDay - enteredDay + monthCheck();
     } else {
       yearDisplay.textContent = currentYear - enteredYear - 1;
-      monthDisplay.textContent = currentMonth - enteredMonth + 12;
-      dayDisplay.textContent = currentDay - enteredDay;
+      monthDisplay.textContent = currentMonth - enteredMonth + 11;
+      dayDisplay.textContent = currentDay - enteredDay + monthCheck();
     }
+    // if () {
+    //   dayDisplay.textContent = currentDay - enteredDay + monthCheck();
+    //   monthDisplay.textContent = currentMonth - enteredMonth + 11;
+    // }
+
     if (currentYear - enteredYear == 1) {
       document.querySelector("#year-label").textContent = "year";
     }
